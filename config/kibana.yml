@@ -10,13 +10,13 @@
 # Use the `server.rewriteBasePath` setting to tell Kibana if it should remove the basePath
 # from requests it receives, and to prevent a deprecation warning at startup.
 # This setting cannot end in a slash.
-#server.basePath: ""
+server.basePath: "/opsramp"
 
 # Specifies whether Kibana should rewrite requests that are prefixed with
 # `server.basePath` or require that they are rewritten by your reverse proxy.
 # This setting was effectively always `false` before Kibana 6.3 and will
 # default to `true` starting in Kibana 7.0.
-#server.rewriteBasePath: false
+server.rewriteBasePath: true
 
 # The maximum payload size in bytes for incoming server requests.
 #server.maxPayloadBytes: 1048576
@@ -25,7 +25,7 @@
 #server.name: "your-hostname"
 
 # The URLs of the Elasticsearch instances to use for all your queries.
-#elasticsearch.hosts: ["http://localhost:9200"]
+elasticsearch.hosts: ["http://172.26.25.151:9200","http://172.26.25.152:9200"]
 
 # When this setting's value is true Kibana uses the hostname specified in the server.host
 # setting. When the value of this setting is false, Kibana uses the hostname of the host
@@ -111,3 +111,14 @@
 
 # Specifies locale to be used for all localizable strings, dates and number formats.
 #i18n.locale: "en"
+
+console.enabled: false
+xpack.infra.enabled: false
+xpack.logstash.enabled: false
+xpack.canvas.enabled: false
+xpack.ml.enabled: false
+xpack.monitoring.enabled: false
+xpack.uptime.enabled: false
+xpack.maps.enabled: false
+xpack.apm.enabled: false
+server.defaultRoute: /app/kibana#/dashboards?title=FlowData%3A%20Overview
